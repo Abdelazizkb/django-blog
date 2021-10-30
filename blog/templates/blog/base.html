@@ -12,6 +12,11 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
     integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
+  <link href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <link rel="stylesheet" type="text/css" href="{% static 'blog/style.css' %}">
   <link rel="stylesheet" type="text/css" href="{% static 'blog/main.css' %}">
 
   {% if title %}
@@ -22,35 +27,30 @@
 </head>
 
 <body>
-  <header class="site-header">
-    <nav class="navbar navbar-expand-md navbar-dark bg-steel fixed-top">
-      <div class="container">
-        <a class="navbar-brand mr-4" href="{% url 'blog-home' %}">Django Blog</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggle"
-          aria-controls="navbarToggle" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarToggle">
-          <div class="navbar-nav mr-auto">
-            <a class="nav-item nav-link" href="{% url 'blog-home' %}">Home</a>
-            <a class="nav-item nav-link" href="{% url 'blog-about' %}">About</a>
-          </div>
-          <!-- Navbar Right Side -->
-          <div class="navbar-nav">
+  <nav class="navbar navbar-expand-lg ftco_navbar ftco-navbar-light" id="ftco-navbar">
+    <div class="container">
+      <a class="navbar-brand" href="/">Abdelazizkb</a>
 
-            {% if user.is_authenticated %}
-            <a class="nav-item nav-link" href="{% url 'profile' %}">profile</a>
-            <a class="nav-item nav-link" href="{% url 'logout' %}">logout</a>
-            {% else %}
-            <a class="nav-item nav-link" href="{% url 'login' %}">Login</a>
-            <a class="nav-item nav-link" href="{% url 'register' %}">Register</a>
-            {% endif %}
-
-          </div>
-        </div>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav"
+        aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="fa fa-bars"></span> Menu
+      </button>
+      <div class="collapse navbar-collapse" id="ftco-nav">
+        <ul class="navbar-nav ml-auto mr-md-3">
+          <li class="nav-item"><a href="{% url 'blog-about' %}" class="nav-link">About</a></li>
+          <li class="nav-item"><a href="{% url 'blog-contact' %}" class="nav-link">Contact</a></li>
+          {% if user.is_authenticated %}
+          <li class="nav-item "><a href="{% url 'profile' %}" class="nav-link">Profile</a></li>
+          <li class="nav-item"><a href="{% url 'logout' %}" class="nav-link">logout</a></li>
+          {% else %}
+          <li class="nav-item "><a href="{% url 'login' %}" class="nav-link">Login</a></li>
+          <li class="nav-item"><a href="{% url 'register' %}" class="nav-link">Register</a></li>
+          {% endif %}
+        </ul>
       </div>
-    </nav>
-  </header>
+    </div>
+  </nav>
+
   <main role="main" class="container">
     <div class="row">
       <div class="col-md-8">
@@ -63,8 +63,8 @@
         {% endif %}
         {% block content %}{% endblock %}
       </div>
-      <div class="col-md-4">
-        <div class="content-section">
+      <div class="col-md-4 mt-3 ">
+        <div class="content-section shadow">
           <h3>Our Sidebar</h3>
           <p class='text-muted'>You can put any information here you'd like.
             <ul class="list-group">
@@ -78,7 +78,84 @@
       </div>
     </div>
   </main>
+  <!-- Footer -->
+  <footer class="text-center text-lg-start bg-dark text-muted">
+    <!-- Section: Social media -->
+    <section class=" border-bottom">
+      <!-- Left -->
+      <div  class="container d-flex justify-content-center justify-content-lg-between p-4">
+          <div class="me-5 d-none d-lg-block text-white ">
+            <span>Get connected with us on social networks:</span>
+          </div>
+          <!-- Left -->
+    
+          <!-- Right -->
+          <div class="social-media order-lg-last">
+            <p class="mb-0 d-flex">
+              <a href="https://d.facebook.com/abdelaziz.korba.7" class="d-flex align-items-center justify-content-center"><span class="fa fa-facebook text-white "><i
+                    class="sr-only">Facebook</i></span></a>
+              <a href="https://github.com/Abdelazizkb" class="d-flex align-items-center justify-content-center"><span class="fa fa-github text-white "><i
+                    class="sr-only">Github</i></span></a>
+              <a href="https://www.linkedin.com/in/abdelaziz-korba/" class="d-flex align-items-center justify-content-center"><span class="fa fa-linkedin text-white "><i
+                    class="sr-only">LinkedIn</i></span></a>
+            </p>
+          </div>
+      </div>
 
+      <!-- Right -->
+    </section>
+    <!-- Section: Social media -->
+
+    <!-- Section: Links  -->
+    <section class="">
+      <div class="container text-center text-md-start mt-5">
+        <!-- Grid row -->
+        <div class="row mt-3">
+          <!-- Grid column -->
+          <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+            <!-- Content -->
+            <h6 class="text-uppercase fw-bold mb-4 text-white ">
+              <i class="fa fa-gem me-3 "></i>Abdelaziz korba
+            </h6>
+            <p class="text-white ">
+              Experienced Full Stack web developer
+              with a Licentiate degree focused in Management Information Systems.
+            </p>
+          </div>
+          <!-- Grid column -->
+
+          <!-- Grid column -->
+
+          <!-- Grid column -->
+
+          <!-- Grid column -->
+          <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+            <!-- Links -->
+            <h6 class="text-uppercase fw-bold mb-4 text-white">
+              Contact
+            </h6>
+            <p class="text-white">
+            <i class="fas fa-envelope me-3 "></i>
+            korbaabdo@gmail.com
+            </p>
+            <p class="text-white"><i class="fas fa-phone me-3"></i>+213 779 247 735</p>
+            <a href="https://abdelazizkb.github.io/" class="text-white"><i class="fa fa-website me-3"></i>website</a>
+          </div>
+          <!-- Grid column -->
+        </div>
+        <!-- Grid row -->
+      </div>
+    </section>
+    <!-- Section: Links  -->
+
+    <!-- Copyright -->
+    <div class="text-center p-4 text-white" style="background-color: rgba(0, 0, 0, 0.05);">
+      © 2021 Copyright:
+      <a class="text-white fw-bold"  href="https://abdelazizkb.github.io/" target="_blank">Abdelaziz korba</a>
+    </div>
+    <!-- Copyright -->
+  </footer>
+  <!-- Footer -->
   <!-- Optional JavaScript -->
   <!-- jQuery first, then Popper.js, then Bootstrap JS -->
   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
@@ -90,6 +167,11 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
     integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
   </script>
+  <script src="js/jquery.min.js"></script>
+  <script src="js/popper.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/main.js"></script>
+
 </body>
 
 </html>
