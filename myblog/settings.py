@@ -128,6 +128,8 @@ LOGIN_REDIRECT_URL='blog-home'
 LOGIN_URL='login'
 LOGOUT_REDIRECT_URL='/'
 
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
 
